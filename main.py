@@ -37,4 +37,28 @@ def play_game(name):
     # Ask for attempts
     attempts = get_number("How many attempts? ")
 
+  # Generate random number
+    secret = random.randint(low, high)
+
+    used = 0
+
+    print(f"\nGuess a number between {low} and {high}")
+
+    # Guess loop
+    while used < attempts:
+        guess = get_number("Your guess: ")
+        used += 1
+
+        if guess == secret:
+            print("Correct! You won!")
+            return
+
+        if guess < secret:
+            print("Too low!")
+        else:
+            print("Too high!")
+
+        print("Attempts left:", attempts - used)
+
    
+  
