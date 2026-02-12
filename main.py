@@ -61,4 +61,28 @@ def play_game(name):
         print("Attempts left:", attempts - used)
 
    
+        print("Attempts left:", attempts - used)
+
+    # If they lose
+    print("Out of tries! The number was", secret)
+
+
+# Main game loop
+def main():
+
+    name = input("Enter your name: ").strip()
+    print("Welcome,", name)
+
+    while True:
+        play_game(name)
+
+        again = get_yes_no("\nPlay again? (y/n): ")
+        if again == "n":
+            print("Goodbye!")
+            break
+
+
+# Start the game
+main()
+  
   
