@@ -1,33 +1,22 @@
-# Import random module to generate a random number
+# Import random module
+import random
 
-# Function to get a valid integer input with error handling
 
-# Function to get a valid 'y' or 'n' response from the user
+# Function to safely get a number from the user
+def get_number(prompt):
+    while True:
+        try:
+            return int(input(prompt).strip())
+        except:
+            print("Please enter a valid number.")
 
-# Function to play one round of the game
 
-# Ask for number range
+# Function to get only y or n
+def get_yes_no(prompt):
+    while True:
+        answer = input(prompt).strip().lower()
+        if answer == "y" or answer == "n":
+            return answer
+        print("Enter only y or n.")
 
-# Ensure low_number is less than high_number
 
-# Ask for number of attempts
-
-# Generate random number
-
-# Track number of attempts
-
-# Loop for user guesses
-
-# Check if guess is too low or too high
-
-# Display success message if guessed correctly
-
-# If max attempts are used up, reveal the correct number
-
-# Main game loop
-
-# Ask for user's name and greet them
-
-# Ask if they want to play again, only accepting 'y' or 'n'
-
-# Run the game
