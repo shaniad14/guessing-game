@@ -20,3 +20,21 @@ def get_yes_no(prompt):
         print("Enter only y or n.")
 
 
+# Function to play one round
+def play_game(name):
+
+    print("\nLet's set up your game," , name)
+
+    # Ask for range
+    while True:
+        low = get_number("Low number: ")
+        high = get_number("High number: ")
+
+        if high > low:
+            break
+        print("High must be greater than low.")
+
+    # Ask for attempts
+    attempts = get_number("How many attempts? ")
+
+   
