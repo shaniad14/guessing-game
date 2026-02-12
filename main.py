@@ -64,7 +64,7 @@ def play_game(name):
         print("Attempts left:", attempts - used)
 
     # If they lose
-    print("Out of tries! The number was", secret)
+    print("Out of tries!! The number was", secret)
 
 
 # Main game loop
