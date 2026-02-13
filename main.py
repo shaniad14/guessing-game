@@ -23,7 +23,7 @@ def get_yes_no(prompt):
 # Function to play one round
 def play_game(name):
 
-    print("\nLet's set up your game," , name)
+    print("\nLet's set up your game,", name)
 
     # Ask for range
     while True:
@@ -37,7 +37,7 @@ def play_game(name):
     # Ask for attempts
     attempts = get_number("How many attempts? ")
 
-  # Generate random number
+    # Generate random number
     secret = random.randint(low, high)
 
     used = 0
@@ -60,7 +60,6 @@ def play_game(name):
 
         print("Attempts left:", attempts - used)
 
-   
         print("Attempts left:", attempts - used)
 
     # If they lose
@@ -84,5 +83,3 @@ def main():
 
 # Start the game
 main()
-  
-  
