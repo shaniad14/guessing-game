@@ -1,3 +1,7 @@
+"""
+NUMBER GUESSING GAME
+"""
+
 import random
 
 
@@ -51,4 +55,3 @@ while True:
     if again == "n":
         print("Goodbye!")
         break
-
