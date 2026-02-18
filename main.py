@@ -1,85 +1,54 @@
-# Import random module
 import random
 
 
-# Function to safely get a number from the user
+# safe number input
 def get_number(prompt):
     while True:
         try:
-            return int(input(prompt).strip())
+            return int(input(prompt))
         except:
-            print("Please enter a valid number.")
+            print("Enter a valid number.")
 
 
-# Function to get only y or n
-def get_yes_no(prompt):
-    while True:
-        answer = input(prompt).strip().lower()
-        if answer == "y" or answer == "n":
-            return answer
-        print("Enter only y or n.")
+# play one round
+def play():
 
+    low = get_number("Minimum number: ")
+    high = get_number("Maximum number: ")
 
-# Function to play one round
-def play_game(name):
-
-    print("\nLet's set up your game,", name)
-
-    # Ask for range
-    while True:
-        low = get_number("Low number: ")
-        high = get_number("High number: ")
-
-        if high > low:
-            break
-        print("High must be greater than low.")
-
-    # Ask for attempts
-    attempts = get_number("How many attempts? ")
-
-    # Generate random number
     secret = random.randint(low, high)
+    attempts = get_number("How many guesses? ")
 
-    used = 0
+    print("\nGuess the number!")
 
-    print(f"\nGuess a number between {low} and {high}")
+    while attempts > 0:
 
-    # Guess loop
-    while used < attempts:
         guess = get_number("Your guess: ")
-        used += 1
 
         if guess == secret:
-            print("Correct! You won!")
+            print("You win!")
             return
 
-        if guess < secret:
+        elif guess < secret:
             print("Too low!")
+
         else:
             print("Too high!")
 
-        print("Attempts left:", attempts - used)
+        attempts -= 1
+        print("Guesses left:", attempts)
 
-        print("Attempts left:", attempts - used)
-
-    # If they lose
-    print("Out of tries!! The number was", secret)
+    print("You lost! The number was:", secret)
 
 
-# Main game loop
-def main():
+# main loop
+while True:
 
-    name = input("Enter your name: ").strip()
-    print("Welcome,", name)
+    play()
 
-    while True:
-        play_game(name)
+    again = input("\nPlay again? (y/n): ").lower()
 
-        again = get_yes_no("\nPlay again? (y/n): ")
-        if again == "n":
-            print("Goodbye!")
-            break
+    if again == "n":
+        print("Goodbye!")
+        break
 
-
-# Start the game
-main()
